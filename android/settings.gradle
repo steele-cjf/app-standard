@@ -1,3 +1,5 @@
 rootProject.name = 'AwesomeProject'
+include ':react-native-baidu-map'
+project(':react-native-baidu-map').projectDir = new File(rootProject.projectDir, '../node_modules/_react-native-baidu-map@1.0.26@react-native-baidu-map/android')
 apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 include ':app'

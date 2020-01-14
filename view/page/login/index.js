@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Container, Header, Content, Form, Item, Input, Label, Button, Text } from 'native-base';
+import { Container, Header, Content, Form, Item, Input, Label, Button, Text, Body, Title } from 'native-base';
 class Login extends React.Component {
   constructor(props) {
     super()
@@ -22,7 +22,11 @@ class Login extends React.Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header>
+          <Body>
+            <Title>ThingsMatrix</Title>
+          </Body>
+        </Header>
         <Content>
           <Form>
             <Item floatingLabel>
