@@ -9,6 +9,7 @@ import Toast from '../components/toast';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import MapScreen from '../components/map';
+import GoogleMap from '../components/googleMap';
 
 export const routes = {
   Home: { screen: Home },
@@ -20,7 +21,8 @@ export const routes = {
   Thumbnail: { screen: Thumbnail },
   Toast: { screen: Toast },
   Footer: { screen: Footer },
-  Map: { screen: MapScreen }
+  Map: { screen: MapScreen },
+  GoogleMap: { screen: GoogleMap }
 }
 
 export const routeKeys = Object.keys(routes)
