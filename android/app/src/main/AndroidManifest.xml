@@ -16,6 +16,9 @@
       <meta-data
         android:name="com.baidu.lbsapi.API_KEY"
         android:value="yc3ksr8TqEvVduQItAciF3qSQXgDYGpG" />
+      <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyCkETT3ivOiCKCthzKWRLE8fRKFgiviuVI" />
       <activity
         android:name=".MainActivity"
         android:screenOrientation="portrait" 
