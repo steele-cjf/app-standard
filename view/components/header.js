@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Header, Content, Accordion } from "native-base";
+import { Container, Header, Content, Accordion, Left, Button, Icon, Body } from "native-base";
 const dataArray = [
   { title: "First Element", content: "Lorem ipsum dolor sit amet" },
   { title: "Second Element", content: "Lorem ipsum dolor sit amet" },
@@ -9,8 +9,15 @@ export default class AccordionHeaderContentStyleExample extends Component {
   render() {
     return (
       <Container>
-        <Header />
-        <Content padder>
+        <Header>
+          <Left>
+            <Button  onPress={() => this.props.navigation.openDrawer()}>
+              <Icon name='more' />
+            </Button>
+          </Left>
+          <Body/>
+        </Header>
+        <Content>
           <Accordion
             dataArray={dataArray}
             headerStyle={{ backgroundColor: "#b7daf8" }}

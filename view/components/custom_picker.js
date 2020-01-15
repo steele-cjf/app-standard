@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Header, Content, Icon, Picker, Form, Left, Button, Body, Title } from "native-base";
+import { Container, Header, Content, Icon, Picker, Form, Left, Button, Body } from "native-base";
 
 export default class PickerCustomHeaderStyleExample extends Component {
   constructor(props) {
@@ -16,7 +16,14 @@ export default class PickerCustomHeaderStyleExample extends Component {
   render() {
     return (
       <Container>
-        <Header/>
+        <Header>
+          <Left>
+            <Button  onPress={() => this.props.navigation.openDrawer()}>
+              <Icon name='more' />
+            </Button>
+          </Left>
+          <Body/>
+        </Header>
         <Content>
           <Form>
             <Picker

@@ -3,27 +3,38 @@ import Home from "../page/home";
 import Login from "../page/login";
 
 // components
-import PickerCustomHeaderStyle from '../components/custom_picker';
+import CustomPicker from '../components/custom_picker';
 import Thumbnail from '../components/thumbnail';
 import Toast from '../components/toast';
 import Header from '../components/header';
 import Footer from '../components/footer';
-import MapScreen from '../components/map';
+import BaiduMap from '../components/baiduMap';
 import GoogleMap from '../components/googleMap';
+import Segments from '../components/segments'
+import Grid from '../components/grid'
 
-export const routes = {
+// 業務路由
+const pages = {
   Home: { screen: Home },
   Login: { screen: Login },
   Header: { screen: Header },
+}
 
-  // components(组件库)
-  PickerCustomHeaderStyle: { screen: PickerCustomHeaderStyle},
+// 組件路由
+const components = {
+  CustomPicker: { screen: CustomPicker},
   Thumbnail: { screen: Thumbnail },
   Toast: { screen: Toast },
   Footer: { screen: Footer },
-  Map: { screen: MapScreen },
-  GoogleMap: { screen: GoogleMap }
+  BaiduMap: { screen: BaiduMap },
+  GoogleMap: { screen: GoogleMap },
+  Segments: { screen: Segments},
+  Grid: { screen: Grid }
+}
+export const routes = {
+  ...pages,
+  ...components
 }
 
-export const routeKeys = Object.keys(routes)
-export const firstPage = 'Home'
+export const pagesRoute = Object.keys(pages)
+export const componentsRoute = Object.keys(components)

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Container, Header, Content, Form, Item, Input, Label, Button, Text, Body, Title } from 'native-base';
+import { Container, Header, Content, Form, Item, Input, Label, Button, Text, Body, Left, Title, Icon } from 'native-base';
 class Login extends React.Component {
   constructor(props) {
     super()
@@ -23,8 +23,13 @@ class Login extends React.Component {
     return (
       <Container>
         <Header>
+          <Left>
+            <Button  onPress={() => this.props.navigation.openDrawer()}>
+              <Icon name='more' />
+            </Button>
+          </Left>
           <Body>
-            <Title>ThingsMatrix</Title>
+            <Title>thingsMatrix</Title>
           </Body>
         </Header>
         <Content>

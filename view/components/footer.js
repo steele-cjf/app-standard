@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
-import { Container, Header, Content, Footer, FooterTab, Button, Icon, Text } from 'native-base';
+import { Container, Header, Content, Footer, FooterTab, Button, Icon, Text, Left, Body } from 'native-base';
 export default class FooterTabsIconTextExample extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header>
+          <Left>
+            <Button  onPress={() => this.props.navigation.openDrawer()}>
+              <Icon name='more' />
+            </Button>
+          </Left>
+          <Body/>
+        </Header>
         <Content />
         <Footer>
           <FooterTab>

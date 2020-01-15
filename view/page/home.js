@@ -1,30 +1,37 @@
 import React from "react";
-import { Container, Content, Text, Title, List, ListItem, Header, Body } from "native-base";
-import { routeKeys } from '../routers/index'
+import { Container, Content, Text, Title, Header, Body, Button } from "native-base";
+import { StyleSheet} from 'react-native'
 export default class HomeScreen extends React.Component {
+  openDrawer() {
+    this.props.navigation.openDrawer()
+  }
   render() {
     return (
       <Container>
         <Header>
           <Body>
-            <Title>Home</Title>
+            <Title>thingsMatrix2</Title>
           </Body>
         </Header>
         <Content padder>
-          <List
-            dataArray={routeKeys}
-            renderRow={data => {
-              return (
-                <ListItem
-                  key={data}
-                  button onPress={() => this.props.navigation.navigate(data)}>
-                  <Text>{data}</Text>
-                </ListItem>
-              );
-            }}
-          />
+          <Text style={styles.homeTitle}>Welcome to thingsMatrix</Text>
+          <Body>
+            <Button style={styles.btn} onPress={this.openDrawer.bind(this)}>
+              <Text>Let's Go</Text>
+            </Button>
+          </Body>
         </Content>
       </Container>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  homeTitle: {
+    textAlign: 'center',
+    marginTop: 20
+  },
+  btn: {
+    marginTop: 20
+  }
+})

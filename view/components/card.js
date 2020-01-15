@@ -4,11 +4,47 @@ export default class CardItemBordered extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        {/* <Header /> */}
         <Content padder>
           <Card>
             <CardItem header bordered>
-              <Text>NativeBase</Text>
+              <Text>NativeBase1</Text>
+            </CardItem>
+            <CardItem bordered>
+              <Body>
+                <Text>
+                  NativeBase is a free and open source framework that enable
+                  developers to build
+                  high-quality mobile apps using React Native iOS and Android
+                  apps
+                  with a fusion of ES6.
+                </Text>
+              </Body>
+            </CardItem>
+            <CardItem footer bordered>
+              <Text>GeekyAnts</Text>
+            </CardItem>
+
+            <CardItem header bordered>
+              <Text>NativeBase2</Text>
+            </CardItem>
+            <CardItem bordered>
+              <Body>
+                <Text>
+                  NativeBase is a free and open source framework that enable
+                  developers to build
+                  high-quality mobile apps using React Native iOS and Android
+                  apps
+                  with a fusion of ES6.
+                </Text>
+              </Body>
+            </CardItem>
+            <CardItem footer bordered>
+              <Text>GeekyAnts</Text>
+            </CardItem>
+
+            <CardItem header bordered>
+              <Text>NativeBase3</Text>
             </CardItem>
             <CardItem bordered>
               <Body>

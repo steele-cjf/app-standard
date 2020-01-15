@@ -12,10 +12,10 @@
       android:icon="@mipmap/ic_launcher"
       android:roundIcon="@mipmap/ic_launcher_round"
       android:allowBackup="false"
-
-      android:name="com.baidu.lbsapi.API_KEY"
-      android:value="yc3ksr8TqEvVduQItAciF3qSQXgDYGpG"
       android:theme="@style/AppTheme">
+      <meta-data
+        android:name="com.baidu.lbsapi.API_KEY"
+        android:value="yc3ksr8TqEvVduQItAciF3qSQXgDYGpG" />
       <activity
         android:name=".MainActivity"
         android:screenOrientation="portrait" 

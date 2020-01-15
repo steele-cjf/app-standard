@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Header, Content, Text, Button, Toast } from "native-base";
+import { Container, Header, Content, Text, Button, Toast, Left, Icon, Body } from "native-base";
 export default class ToastType extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +10,14 @@ export default class ToastType extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header>
+          <Left>
+            <Button  onPress={() => this.props.navigation.openDrawer()}>
+              <Icon name='more' />
+            </Button>
+          </Left>
+          <Body></Body>
+        </Header>
         <Content padder>
           <Button
             onPress={() =>

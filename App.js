@@ -1,5 +1,4 @@
 import React from 'react';
-import 'react-native-gesture-handler';
 import { AppRegistry  } from 'react-native'
 import Root from './view/root'
 import './view/locale/index'
