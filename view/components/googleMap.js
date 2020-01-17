@@ -60,7 +60,7 @@ class DefaultMarkers extends React.Component {
           mapType={Platform.OS == "android" ? "none" : "standard"}
           provider={this.props.provider}
           style={styles.map}
-          initialRegion={this.state.region}
+          region={this.state.region}
           onPress={e => this.onMapPress(e)}
         >
           {this.state.markers.map(marker => (

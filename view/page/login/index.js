@@ -43,7 +43,7 @@ class Login extends React.Component {
               <Input secureTextEntry/>
             </Item>
           </Form>
-          <Button block style={{ margin: 15, marginTop: 50 }} onPress={() => this.props.navigation.goBack()}>
+          <Button block style={{ margin: 15, marginTop: 50 }} onPress={this.login.bind(this)}>
             <Text>Sign In</Text>
           </Button>
         </Content>
