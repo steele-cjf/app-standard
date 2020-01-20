@@ -1,20 +1,23 @@
 import React, {Component} from 'react';
 import { Container, Header, Content, Form, Item, Input, Label, Button, Text, Body, Left, Title, Icon } from 'native-base';
-import md5 from 'react-native-md5';
+import md5 from 'md5';
 class Login extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      loginName: '',
+      password: ''
+    }
   }
   changeLocal () {
     I18n.locale = I18n.locale === 'enUS' ? 'zhCN' : 'enUS'
     this.forceUpdate()
   }
   login () {
-    console.log(999)
-    console.log(md5)
+    let {password, loginName} = this.state
     this.props.login({
-      "loginName": "admin",
-      "password": "8fd54980b6cb0f41e4e9baa87ecba73e"
+      password,
+      loginName
     })
   }
   componentWillReceiveProps(nextProps) {
