@@ -1,6 +1,8 @@
 
 import Home from "../page/home";
 import Login from "../page/login";
+import Setting from "../page/setting";
+
 
 // components
 import CustomPicker from '../components/custom_picker';
@@ -18,6 +20,7 @@ const pages = {
   Home: { screen: Home },
   Login: { screen: Login },
   Header: { screen: Header },
+  Setting: { screen: Setting }
 }
 
 // 組件路由
