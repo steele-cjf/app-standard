@@ -1,5 +1,6 @@
 import axios from 'axios'
 import apiConfig from '../../config'
+import { Toast } from "native-base";
 
 // 默认配置
 const DEFAULT_CONFIG = {
@@ -36,7 +37,10 @@ const responseHandler = (dispatch, config) => {
     }
     if (config.successConfig) {
       if (config.successConfig.msg) {
-        // alert(config.successConfig.msg)
+        Toast.show({
+          text: config.successConfig.msg,
+          buttonText: "Okay"
+        })
       }
       if (config.successConfig.callback) {
         config.successConfig.callback(config.responseData)
@@ -46,14 +50,18 @@ const responseHandler = (dispatch, config) => {
     const errorMsg = config.responseData.msg || ''
     if (errorMsg) {
       if (config.failConfig && config.failConfig.isForceShow) { // 判断是否强制执行前端自定义错误提示信息
-        if (config.failConfig.msg) {
-          // alert(config.failConfig.msg)
-        }
+        Toast.show({
+          text: config.failConfig.msg || errorMsg,
+          buttonText: "Okay"
+        })
       }
     } else { // 如果后端没有默认的错误信息，则执行前端自定义错误提示信息
       if (config.failConfig) {
         if (config.failConfig.msg) {
-          // alert(config.failConfig.msg)
+          Toast.show({
+            text: config.failConfig.msg,
+            buttonText: "Okay"
+          })
         }
       }
     }

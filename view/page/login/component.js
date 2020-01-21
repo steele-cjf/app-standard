@@ -6,26 +6,45 @@ class Login extends React.Component {
     super(props)
     this.state = {
       loginName: '',
-      password: ''
+      password: '',
+      cookieObje: {}
     }
   }
-  changeLocal () {
-    I18n.locale = I18n.locale === 'enUS' ? 'zhCN' : 'enUS'
-    this.forceUpdate()
+  componentDidUpdate(prevProps) {
+    console.log(this.props.userInfo, prevProps.userInfo)
+    if (this.props.userInfo !== prevProps.userInfo) {
+      this.props.navigation.navigate('BaiduMap')
+    }
+  }
+  static getDerivedStateFromProps(props, state) {
+    if (props.userInfo && props.userInfo !== state.prevPropsUserInfo) {
+      return {
+        cookieObje: props.userInfo
+      };
+    }
+    return null;
+  }
+  componentDidUpdate(prevProps) {
+    // 典型用法（不要忘记比较 props）：
+    if (this.props.userID !== prevProps.userID) {
+      this.fetchData(this.props.userID);
+    }
   }
   login () {
-    let {password, loginName} = this.state
+    let { password, loginName } = this.state
+    password = md5(password)
     this.props.login({
       password,
       loginName
     })
   }
-  componentWillReceiveProps(nextProps) {
-    if (this.props.userInfo !== nextProps.userInfo) {
-      console.log(nextProps.userInfo, 'next')
-    }
+  change (name, value) {
+    this.setState({
+      [name]: value
+    })
   }
   render() {
+    let { loginName, password } = this.state
     return (
       <Container>
         <Header>
@@ -42,11 +61,11 @@ class Login extends React.Component {
           <Form>
             <Item floatingLabel>
               <Label>Username</Label>
-              <Input />
+              <Input onChangeText={this.change.bind(this, 'loginName')} value={loginName}/>
             </Item>
             <Item floatingLabel last>
               <Label>Password</Label>
-              <Input secureTextEntry/>
+              <Input secureTextEntry onChangeText={this.change.bind(this, 'password')} value={password}/>
             </Item>
           </Form>
           <Button block style={{ margin: 15, marginTop: 50 }} onPress={this.login.bind(this)}>

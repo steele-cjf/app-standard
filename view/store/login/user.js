@@ -7,12 +7,18 @@ export function login(data) {
   return post({
     url: '/user/login',
     actionType: USER_INFO,
-    bodyData: data
+    bodyData: data,
+    failConfig: {
+      isForceShow: true
+    },
+    successConfig: {
+      msg: 'login success'
+    }
   })
 }
 
 // reducer
-export function userInfo(state = { data: {}, isInit: true}, action){
+export function userInfo(state = null, action){
   if (action.type === USER_INFO) {
     return action.data
   }
