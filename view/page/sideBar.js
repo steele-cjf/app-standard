@@ -1,10 +1,13 @@
 import React from "react";
-import { Container, Content, Text, Title, List, ListItem, Header, Body } from "native-base";
+import { Container, Content, Text, Title, List, ListItem, Header, Body, Button } from "native-base";
 import { pagesRoute, componentsRoute } from '../routers/index'
 import { StyleSheet } from 'react-native'
 export default class HomeScreen extends React.Component {
   goToPage (data) {
     this.props.navigation.navigate(data)
+  }
+  logout() {
+    this.props.navigation.navigate('Login')
   }
   render() {
     return (
@@ -28,6 +31,11 @@ export default class HomeScreen extends React.Component {
               );
             }}
           />
+          <List>
+            <ListItem button onPress={this.logout.bind(this)}>
+              <Text>logout</Text>
+            </ListItem>
+          </List>
           <Text style={styles.title2}>组件模块</Text>
           <List
             dataArray={componentsRoute}

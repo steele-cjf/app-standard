@@ -42,6 +42,9 @@ class Login extends React.Component {
     this.setState({
       [name]: value
     })
+    storage.getAllDataForKey('user').then(users => {
+      console.log(users, 1231221);
+    });
   }
   render() {
     let { loginName, password } = this.state

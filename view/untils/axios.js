@@ -39,7 +39,8 @@ const responseHandler = (dispatch, config) => {
       if (config.successConfig.msg) {
         Toast.show({
           text: config.successConfig.msg,
-          buttonText: "Okay"
+          buttonText: "Okay",
+          position: "bottom"
         })
       }
       if (config.successConfig.callback) {
@@ -52,7 +53,8 @@ const responseHandler = (dispatch, config) => {
       if (config.failConfig && config.failConfig.isForceShow) { // 判断是否强制执行前端自定义错误提示信息
         Toast.show({
           text: config.failConfig.msg || errorMsg,
-          buttonText: "Okay"
+          buttonText: "Okay",
+          position: "bottom"
         })
       }
     } else { // 如果后端没有默认的错误信息，则执行前端自定义错误提示信息
@@ -60,7 +62,8 @@ const responseHandler = (dispatch, config) => {
         if (config.failConfig.msg) {
           Toast.show({
             text: config.failConfig.msg,
-            buttonText: "Okay"
+            buttonText: "Okay",
+            position: "bottom"
           })
         }
       }
